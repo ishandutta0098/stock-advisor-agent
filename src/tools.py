@@ -15,13 +15,13 @@ session = requests.Session(impersonate="chrome")
 # and that is provided to the framework (hence to agents) as a tool
 # with the '@tool' decorator
 @tool("DuckDuckGo Search")
-def search_tool(search_query: str):
+def search_tool(search_query):
     """Search the internet for information on a given topic"""
     return DuckDuckGoSearchRun().run(search_query)
 
 
 @tool("Get current stock price")
-def get_current_stock_price(symbol: str) -> str:
+def get_current_stock_price(symbol) -> str:
     """Use this function to get the current stock price for a given symbol.
 
     Args:
@@ -47,7 +47,7 @@ def get_current_stock_price(symbol: str) -> str:
 
 
 @tool
-def get_company_info(symbol: str):
+def get_company_info(symbol):
     """Use this function to get company information and current financial snapshot for a given stock symbol.
 
     Args:
@@ -91,7 +91,7 @@ def get_company_info(symbol: str):
 
 
 @tool
-def get_income_statements(symbol: str):
+def get_income_statements(symbol):
     """Use this function to get income statements for a given stock symbol.
 
     Args:
